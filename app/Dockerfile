@@ -12,4 +12,5 @@ RUN apk add --no-cache musl-dev
 
 COPY ./app .
 
-CMD ["go", "run", "./main.go"]
+# CMD ["go", "run", "./main.go"]
+CMD ["sleep", "infinity"]

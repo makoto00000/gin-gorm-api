@@ -20,7 +20,7 @@ services:
       context: .
       dockerfile: ./app/Dockerfile
     ports:
-      - 8080:8080
+      - 3000:3000
     volumes:
       - ./app:/app
 
