@@ -21,6 +21,14 @@ services:
       dockerfile: ./app/Dockerfile
     ports:
       - 3000:3000
+    depends_on:
+      - db
+    environment:
+      - DB_USER=test
+      - DB_PASSWORD=password
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=testdb
     volumes:
       - ./app:/app
 
