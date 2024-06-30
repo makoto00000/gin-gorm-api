@@ -11,7 +11,7 @@ func GetAllUsers(db *gorm.DB) ([]models.User, error) {
 	// 取得されたデータはusers変数にマッピングされる
 	if err := db.Find(&users).Error; err != nil {
 			// クエリ実行中にエラーが発生した場合、そのエラーを返す
-		return nil, err
+			return nil, err
 	}
 	// エラーが発生しなかった場合、取得されたデータを返す
 	return users, nil

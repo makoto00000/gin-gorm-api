@@ -19,3 +19,7 @@ func GetAllUsers() ([]models.User, error) {
 func CreateUser(user *models.User) error {
 	return repositories.CreateUser(db, user)
 }
+
+func GetUserByEmail(email string, user *models.User) error {
+	return db.Where("email = ?", email).First(user).Error
+}
