@@ -9,6 +9,7 @@ func SetupRouter() *gin.Engine {
 	router := gin.Default()
 	v1 := router.Group("api/v1")
 	{
+		// 第二引数に「*gin.Context」を引数に取る「handlers ...gin.HandlerFunc」を渡しておけば、内部でContextを生成してくれる。
 		v1.GET("/users", controllers.GetUsers)
 		v1.POST("/users", controllers.CreateUser)
 	}

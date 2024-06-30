@@ -20,6 +20,8 @@ func GetUsers(c *gin.Context) {
 
 func CreateUser(c *gin.Context) {
 	var user models.User
+// bindJSONは400エラーを返してくれる。
+	// shouldBindJSONの場合、エラーハンドリングは自分で書く必要がある。
 	if err := c.ShouldBindJSON(&user); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": err.Error(),
